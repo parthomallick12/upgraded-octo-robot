@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch Management - Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+
+                <div class="header-title">
+                    <div class="header-icon branch">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l8-4v18"/>
+                            <path d="M19 21V11l-6-4"/>
+                        </svg>
+                    </div>
+                    <h1>Branch Management</h1>
+                </div>
+
+                <div class="header-actions">
+                    <div class="dropdown" id="profileDropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <div class="avatar">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" id="profileMenu">
+                            <div class="dropdown-header">
+                                <p class="user-name">John Doe</p>
+                                <p class="user-email">john@example.com</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">View Profile</a>
+                            <a href="#" class="dropdown-item">Change Password</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <a href="index.html" class="sidebar-brand">
+                        <div class="brand-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18"/>
+                                <path d="M5 21V7l8-4v18"/>
+                                <path d="M19 21V11l-6-4"/>
+                            </svg>
+                        </div>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <a href="index.html" class="nav-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                            Dashboard
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Management Tools</h3>
+                        <div class="dropdown nav-dropdown">
+                            <button class="nav-item dropdown-toggle active">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 21h18"/>
+                                    <path d="M5 21V7l8-4v18"/>
+                                    <path d="M19 21V11l-6-4"/>
+                                </svg>
+                                Branch
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu show">
+                                <a href="#" class="dropdown-item">Add Branch</a>
+                                <a href="branches.html" class="dropdown-item active">All Branches</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="content-wrapper">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <a href="index.html">Dashboard</a>
+                        <span>/</span>
+                        <span>All Branch List</span>
+                    </nav>
+
+                    <!-- Branch List -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon branch">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 21h18"/>
+                                    <path d="M5 21V7l8-4v18"/>
+                                    <path d="M19 21V11l-6-4"/>
+                                </svg>
+                            </div>
+                            <h2>Branch List</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Serial No</th>
+                                            <th>Branch</th>
+                                            <th>Address</th>
+                                            <th>Country</th>
+                                            <th>Location</th>
+                                            <th>Created At</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>gulshan_caffe_branch</td>
+                                            <td>gulshan-1, road 12-A</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>18/Jun/2025</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-sm btn-outline edit">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                                            <path d="m15 5 4 4"/>
+                                                        </svg>
+                                                        Edit
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline delete">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M3 6h18"/>
+                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                                                        </svg>
+                                                        Delete
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline report">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14,2 14,8 20,8"/>
+                                                        </svg>
+                                                        Report
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Lablu Branch</td>
+                                            <td>Road-B Ra-12/c</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>18/Jun/2025</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-sm btn-outline edit">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                                            <path d="m15 5 4 4"/>
+                                                        </svg>
+                                                        Edit
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline delete">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M3 6h18"/>
+                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                                                        </svg>
+                                                        Delete
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline report">
+                                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14,2 14,8 20,8"/>
+                                                        </svg>
+                                                        Report
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
